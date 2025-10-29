@@ -11,8 +11,6 @@ DB_USER = os.getenv("DB_USER", "root")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "")
 DB_NAME = os.getenv("DB_NAME", "subjects")
 
-import os
-import pymysql
 
 def get_database_connection():
     return pymysql.connect(
@@ -20,7 +18,7 @@ def get_database_connection():
         user=os.getenv("DB_USER"),
         password=os.getenv("DB_PASSWORD"),
         database=os.getenv("DB_NAME"),
-        port=3306,
+        port=int(os.getenv("DB_PORT", 3306)),
         cursorclass=pymysql.cursors.DictCursor
     )
 
