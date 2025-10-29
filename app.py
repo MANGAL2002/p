@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import pymysql
 from flask_cors import CORS
+
 import os
 
 app = Flask(__name__)
